@@ -1,0 +1,31 @@
+[project]
+name = "change-order-extractor"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Syed Muhammad Sarmad", email = "smsarmad92@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.162.0",
+    "google-genai>=2.34.0",
+    "openai>=3.42.1",
+    "pydantic>=2.14.2",
+    "pymupdf>=2.0",
+    "python-dotenv>=1.2.4",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+change-order-extractor = "change_order_extractor:main"
+
+[build-system]
+requires = ["uv_build>=0.11.14,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.2.0",
+]

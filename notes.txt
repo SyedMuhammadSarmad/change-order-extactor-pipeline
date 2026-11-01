@@ -1,0 +1,11 @@
+uv init --package --name change-order-extractor
+
+uv pip list → shows a flat table of every installed package and version in .venv.
+
+  
+uv tree → shows which packages depend on which sub-packages.
+
+
+uv add --offline pydantic pymupdf google-genai openai fastapi uvicorn python-dotenv
+
+offline internet pr check krn nhi jana deta balka cache prhta hai
