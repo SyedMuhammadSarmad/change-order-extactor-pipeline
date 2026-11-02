@@ -1,0 +1,319 @@
+{
+  "provider_used": "gemini",
+  "overall_confidence": 0.9925,
+  "needs_human_review": false,
+  "review_reasons": [],
+  "document_quality": {
+    "source_filename": "deductive_brookline.pdf",
+    "source_type": "pdf",
+    "page_count": 1,
+    "total_characters": 2569,
+    "estimated_ocr_noise_ratio": 0.0,
+    "document_quality_score": 1.0,
+    "quality_notes": []
+  },
+  "validation": {
+    "is_valid": true,
+    "line_items_math_valid": true,
+    "cost_reconciliation_valid": true,
+    "contract_rollforward_valid": true,
+    "anomalies": []
+  },
+  "data": {
+    "change_order_number": {
+      "value": "013",
+      "confidence": 1.0,
+      "evidence_quote": "Change Order Number: 013",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "project_name": {
+      "value": "Brookline High School Expansion",
+      "confidence": 0.97,
+      "evidence_quote": "PROJECT: (Name and address)\nBrookline High School Expansion",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 0.9,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "project_number": {
+      "value": null,
+      "confidence": 0.655,
+      "evidence_quote": null,
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.0,
+        "grounding_score": 0.85,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "title": {
+      "value": "Credit Change order for unperformed work",
+      "confidence": 1.0,
+      "evidence_quote": "THE CONTRACT IS CHANGED AS FOLLOWS:\n\nCredit Change order for unperformed work",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "status": {
+      "value": null,
+      "confidence": 0.655,
+      "evidence_quote": null,
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.0,
+        "grounding_score": 0.85,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "effective_or_approval_date": {
+      "value": null,
+      "confidence": 0.655,
+      "evidence_quote": null,
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.0,
+        "grounding_score": 0.85,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "issue_date": {
+      "value": "Nov 1, 2024",
+      "confidence": 1.0,
+      "evidence_quote": "Date: Nov 1, 2024",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "reason_for_change": {
+      "value": "Credit Change order for unperformed work",
+      "confidence": 1.0,
+      "evidence_quote": "Credit Change order for unperformed work",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "scope_of_work_summary": {
+      "value": "Credit Change order for unperformed work",
+      "confidence": 1.0,
+      "evidence_quote": "Credit Change order for unperformed work",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "owner_name": {
+      "value": "Town of Brookline",
+      "confidence": 0.97,
+      "evidence_quote": "OWNER: (Name and address)\nTown of Brookline",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 0.9,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "general_contractor_name": {
+      "value": "Lambrian Construction",
+      "confidence": 0.97,
+      "evidence_quote": "CONTRACTOR: (Name and address)\nLambrian Construction",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 0.9,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "subcontractor_name": {
+      "value": null,
+      "confidence": 0.655,
+      "evidence_quote": null,
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.0,
+        "grounding_score": 0.85,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "schedule_impact_days": {
+      "value": 0,
+      "confidence": 1.0,
+      "evidence_quote": "The Contract Time will be increased by Zero (0) days.",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "cost_summary": {
+      "subtotal": {
+        "value": -107965.0,
+        "confidence": 1.0,
+        "evidence_quote": "The Contract Sum will be decreased by this Change Order in the amount of                                $        -107,965.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "overhead_and_profit": {
+        "value": 0.0,
+        "confidence": 0.655,
+        "evidence_quote": null,
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.0,
+          "grounding_score": 0.85,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": [
+          "IMPLICIT_ZERO_NOT_STATED"
+        ]
+      },
+      "tax_amount": {
+        "value": 0.0,
+        "confidence": 0.655,
+        "evidence_quote": null,
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.0,
+          "grounding_score": 0.85,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": [
+          "IMPLICIT_ZERO_NOT_STATED"
+        ]
+      },
+      "total_change_order_amount": {
+        "value": -107965.0,
+        "confidence": 1.0,
+        "evidence_quote": "The Contract Sum will be decreased by this Change Order in the amount of                                $        -107,965.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      }
+    },
+    "contract_reconciliation": {
+      "original_contract_sum": {
+        "value": 8482000.0,
+        "confidence": 1.0,
+        "evidence_quote": "The original Contract Sum was                                                                   $       8,482,000.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "net_change_by_previous_change_orders": {
+        "value": 846324.0,
+        "confidence": 1.0,
+        "evidence_quote": "The net change by previously authorized Change Orders                                               $         846,324.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "contract_sum_prior_to_this_change_order": {
+        "value": 9328324.0,
+        "confidence": 1.0,
+        "evidence_quote": "The Contract Sum prior to this Change Order was                                                    $       9,328,324.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "this_change_order_amount": {
+        "value": -107965.0,
+        "confidence": 1.0,
+        "evidence_quote": "The Contract Sum will be decreased by this Change Order in the amount of                                $        -107,965.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "new_contract_sum_including_this_change_order": {
+        "value": 9220359.0,
+        "confidence": 1.0,
+        "evidence_quote": "The new Contract Sum including this Change Order will be                                            $       9,220,359.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      }
+    },
+    "line_items": []
+  }
+}

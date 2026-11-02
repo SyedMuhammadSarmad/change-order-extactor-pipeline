@@ -1,11 +1,14 @@
 from .schemas import ChangeOrderExtraction, ValidationAnomaly, ValidationReport
 
-def approx_equal(a:float,b:float, tol:float = 0.10) -> bool:
-    return abs(a-b)<=tol
-    
+
+def approx_equal(a: float, b: float, tol: float = 0.10) -> bool:
+    return abs(a - b) <= tol
+
+
 def validate_extraction(extraction: ChangeOrderExtraction) -> ValidationReport:
-    anomalies:list[ValidationAnomaly] = []
+    anomalies: list[ValidationAnomaly] = []
     line_items_math_valid = True
+    cost_reconciliation_valid = True
 
     # Check 1: Line-Item Math (quantity * unit_price == total_amount)
     for i, item in enumerate(extraction.line_items):
@@ -13,28 +16,52 @@ def validate_extraction(extraction: ChangeOrderExtraction) -> ValidationReport:
         up = item.unit_price.value
         tot = item.total_amount.value
 
-        if  q is not None and up is not None and tot is not None:
-            expected = round(q*up,2)
-            if not approx_equal(expected,tot):
+        if q is not None and up is not None and tot is not None:
+            expected = round(q * up, 2)
+            if not approx_equal(expected, tot):
                 line_items_math_valid = False
-                item.total_amount.confidence = min(item.total_amount.confidence,0.35)
-
+                item.total_amount.confidence = min(item.total_amount.confidence, 0.35)
                 item.total_amount.flags.append("MATH_LINE_ITEM_MISMATCH")
                 anomalies.append(
                     ValidationAnomaly(
-                        code = "MATH_LINE_ITEM_MISMATCH",
-                        severity = "ERROR",
-                        field_paths = [f"line_items[{i}].total_amount"],
-                        message = f"Item {i+1}:{q} *{up} = {expected}, but PDF has {tot}",
-                        expected_value = expected,
-                        actual_value = tot,
+                        code="MATH_LINE_ITEM_MISMATCH",
+                        severity="ERROR",
+                        field_paths=[f"line_items[{i}].total_amount"],
+                        message=f"Item {i+1}: {q} * {up} = {expected}, but PDF has {tot}",
+                        expected_value=expected,
+                        actual_value=tot,
                     )
                 )
 
-     # Check 2: Cost Summary Math (subtotal + overhead_and_profit + tax == total)
-    cost_reconciliation_valid = True
+    # Check 2: Line-Items Roll-up Check (sum(line_items.total_amount) == subtotal)
     cs = extraction.cost_summary
     sub = cs.subtotal.value
+    if extraction.line_items:
+        line_items_total = round(
+            sum(
+                item.total_amount.value
+                for item in extraction.line_items
+                if item.total_amount.value is not None
+            ),
+            2,
+        )
+        target_sub = sub if sub is not None else cs.total_change_order_amount.value
+        if target_sub is not None and not approx_equal(line_items_total, target_sub, tol=1.0):
+            cost_reconciliation_valid = False
+            cs.subtotal.confidence = min(cs.subtotal.confidence, 0.35)
+            cs.subtotal.flags.append("MATH_SUBTOTAL_MISMATCH")
+            anomalies.append(
+                ValidationAnomaly(
+                    code="MATH_SUBTOTAL_MISMATCH",
+                    severity="CRITICAL",
+                    field_paths=["cost_summary.subtotal"],
+                    message=f"Sum of line items ({line_items_total}) does not equal subtotal ({target_sub})",
+                    expected_value=line_items_total,
+                    actual_value=target_sub,
+                )
+            )
+
+    # Check 3: Cost Summary Math (subtotal + overhead_and_profit + tax == total)
     ohp = cs.overhead_and_profit.value or 0.0
     tax = cs.tax_amount.value or 0.0
     tot = cs.total_change_order_amount.value
@@ -56,8 +83,8 @@ def validate_extraction(extraction: ChangeOrderExtraction) -> ValidationReport:
                     actual_value=tot,
                 )
             )
-    
-    # Check 3: Contract Roll-Forward (prior_sum + this_change_order == new_contract_sum)
+
+    # Check 4: Contract Roll-Forward (prior_sum + this_change_order == new_contract_sum)
     contract_rollforward_valid = True
     cr = extraction.contract_reconciliation
     prior = cr.contract_sum_prior_to_this_change_order.value
@@ -78,7 +105,9 @@ def validate_extraction(extraction: ChangeOrderExtraction) -> ValidationReport:
                 ValidationAnomaly(
                     code="MATH_CONTRACT_SUM_MISMATCH",
                     severity="CRITICAL",
-                    field_paths=["contract_reconciliation.new_contract_sum_including_this_change_order"],
+                    field_paths=[
+                        "contract_reconciliation.new_contract_sum_including_this_change_order"
+                    ],
                     message=f"Prior ({prior}) + Current ({curr}) = {expected_new}, but new sum is {new_sum}",
                     expected_value=expected_new,
                     actual_value=new_sum,

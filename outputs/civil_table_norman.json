@@ -1,0 +1,1270 @@
+{
+  "provider_used": "gemini",
+  "overall_confidence": 0.55,
+  "needs_human_review": true,
+  "review_reasons": [
+    "[MATH_LINE_ITEM_MISMATCH] Item 2: 289.4 * 400.0 = 115760.0, but PDF has 234.0",
+    "[MATH_LINE_ITEM_MISMATCH] Item 4: 632.0 * 9.0 = 5688.0, but PDF has 5664.0",
+    "[MATH_LINE_ITEM_MISMATCH] Item 7: 116.0 * 24.25 = 2813.0, but PDF has 776.0",
+    "[MATH_LINE_ITEM_MISMATCH] Item 8: 403.0 * 51.0 = 20553.0, but PDF has 4335.0",
+    "[MATH_LINE_ITEM_MISMATCH] Item 9: 470.0 * 77.0 = 36190.0, but PDF has -4335.0",
+    "[MATH_SUBTOTAL_MISMATCH] Sum of line items (73270.0) does not equal subtotal (90749.0)",
+    "[MATH_CONTRACT_SUM_MISMATCH] Prior (932658.25) + Current (90749.0) = 1023407.25, but new sum is 1023409.25",
+    "Low confidence on cost_summary.subtotal (0.4<0.8)"
+  ],
+  "document_quality": {
+    "source_filename": "civil_table_norman.pdf",
+    "source_type": "pdf",
+    "page_count": 2,
+    "total_characters": 2,
+    "estimated_ocr_noise_ratio": 0.05,
+    "document_quality_score": 0.9,
+    "quality_notes": [
+      "Image-only scanned PDF (extracted via multimodal vision)"
+    ]
+  },
+  "validation": {
+    "is_valid": false,
+    "line_items_math_valid": false,
+    "cost_reconciliation_valid": false,
+    "contract_rollforward_valid": false,
+    "anomalies": [
+      {
+        "code": "MATH_LINE_ITEM_MISMATCH",
+        "severity": "ERROR",
+        "field_paths": [
+          "line_items[1].total_amount"
+        ],
+        "message": "Item 2: 289.4 * 400.0 = 115760.0, but PDF has 234.0",
+        "expected_value": 115760.0,
+        "actual_value": 234.0
+      },
+      {
+        "code": "MATH_LINE_ITEM_MISMATCH",
+        "severity": "ERROR",
+        "field_paths": [
+          "line_items[3].total_amount"
+        ],
+        "message": "Item 4: 632.0 * 9.0 = 5688.0, but PDF has 5664.0",
+        "expected_value": 5688.0,
+        "actual_value": 5664.0
+      },
+      {
+        "code": "MATH_LINE_ITEM_MISMATCH",
+        "severity": "ERROR",
+        "field_paths": [
+          "line_items[6].total_amount"
+        ],
+        "message": "Item 7: 116.0 * 24.25 = 2813.0, but PDF has 776.0",
+        "expected_value": 2813.0,
+        "actual_value": 776.0
+      },
+      {
+        "code": "MATH_LINE_ITEM_MISMATCH",
+        "severity": "ERROR",
+        "field_paths": [
+          "line_items[7].total_amount"
+        ],
+        "message": "Item 8: 403.0 * 51.0 = 20553.0, but PDF has 4335.0",
+        "expected_value": 20553.0,
+        "actual_value": 4335.0
+      },
+      {
+        "code": "MATH_LINE_ITEM_MISMATCH",
+        "severity": "ERROR",
+        "field_paths": [
+          "line_items[8].total_amount"
+        ],
+        "message": "Item 9: 470.0 * 77.0 = 36190.0, but PDF has -4335.0",
+        "expected_value": 36190.0,
+        "actual_value": -4335.0
+      },
+      {
+        "code": "MATH_SUBTOTAL_MISMATCH",
+        "severity": "CRITICAL",
+        "field_paths": [
+          "cost_summary.subtotal"
+        ],
+        "message": "Sum of line items (73270.0) does not equal subtotal (90749.0)",
+        "expected_value": 73270.0,
+        "actual_value": 90749.0
+      },
+      {
+        "code": "MATH_CONTRACT_SUM_MISMATCH",
+        "severity": "CRITICAL",
+        "field_paths": [
+          "contract_reconciliation.new_contract_sum_including_this_change_order"
+        ],
+        "message": "Prior (932658.25) + Current (90749.0) = 1023407.25, but new sum is 1023409.25",
+        "expected_value": 1023407.25,
+        "actual_value": 1023409.25
+      }
+    ]
+  },
+  "data": {
+    "change_order_number": {
+      "value": "2",
+      "confidence": 0.961,
+      "evidence_quote": "CHANGE ORDER NO. 2",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "project_name": {
+      "value": "Vineyards Drainage Improvement Project",
+      "confidence": 0.961,
+      "evidence_quote": "PROJECT: Vineyards Drainage Improvement Project",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "project_number": {
+      "value": "K-2223-47",
+      "confidence": 0.961,
+      "evidence_quote": "CONTRACT NO.: K-2223-47",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "title": {
+      "value": "CHANGE ORDER SUMMARY",
+      "confidence": 0.961,
+      "evidence_quote": "CHANGE ORDER SUMMARY",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "status": {
+      "value": null,
+      "confidence": 0.64,
+      "evidence_quote": null,
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.0,
+        "grounding_score": 0.85,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "effective_or_approval_date": {
+      "value": "4/18/24",
+      "confidence": 0.931,
+      "evidence_quote": "DATE: 4/18/24",
+      "source_page": 2,
+      "signals": {
+        "llm_self_confidence": 0.9,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "issue_date": {
+      "value": "April 23, 2024",
+      "confidence": 0.961,
+      "evidence_quote": "DATE: April 23, 2024",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "reason_for_change": {
+      "value": "Change in Pay Quantities",
+      "confidence": 0.961,
+      "evidence_quote": "DESCRIPTION Change in Pay Quantities",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "scope_of_work_summary": {
+      "value": "Change in Pay Quantities as detailed in the attached quantity change table.",
+      "confidence": 0.931,
+      "evidence_quote": "DESCRIPTION Change in Pay Quantities\nSee Detailed Quantity Change on Page 2 of 2:",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.9,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "owner_name": {
+      "value": "CITY OF NORMAN",
+      "confidence": 0.961,
+      "evidence_quote": "CITY OF NORMAN",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "general_contractor_name": {
+      "value": "Nash Construction",
+      "confidence": 0.961,
+      "evidence_quote": "CONTRACTOR: Nash Construction",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "subcontractor_name": {
+      "value": null,
+      "confidence": 0.64,
+      "evidence_quote": null,
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.0,
+        "grounding_score": 0.85,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "schedule_impact_days": {
+      "value": 139,
+      "confidence": 0.961,
+      "evidence_quote": "(Increase) this change order 139 Calendar Days",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "cost_summary": {
+      "subtotal": {
+        "value": 90749.0,
+        "confidence": 0.4,
+        "evidence_quote": "NET CHANGE $90,749.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.35,
+          "grounding_score": 0.92,
+          "consistency_score": 0.3,
+          "document_quality_score": 0.9
+        },
+        "flags": [
+          "Line item sum does not match document's stated total.",
+          "MATH_SUBTOTAL_MISMATCH"
+        ]
+      },
+      "overhead_and_profit": {
+        "value": 0.0,
+        "confidence": 0.64,
+        "evidence_quote": null,
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.0,
+          "grounding_score": 0.85,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": [
+          "IMPLICIT_ZERO_NOT_STATED"
+        ]
+      },
+      "tax_amount": {
+        "value": 0.0,
+        "confidence": 0.64,
+        "evidence_quote": null,
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.0,
+          "grounding_score": 0.85,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": [
+          "IMPLICIT_ZERO_NOT_STATED"
+        ]
+      },
+      "total_change_order_amount": {
+        "value": 90749.0,
+        "confidence": 0.961,
+        "evidence_quote": "NET CHANGE $90,749.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 0.92,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": [
+          "Line item sum does not match document's stated total."
+        ]
+      }
+    },
+    "contract_reconciliation": {
+      "original_contract_sum": {
+        "value": 728216.25,
+        "confidence": 0.961,
+        "evidence_quote": "ORIGINAL CONTRACT AMOUNT $ 728,216.25",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 0.92,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": []
+      },
+      "net_change_by_previous_change_orders": {
+        "value": 204442.0,
+        "confidence": 0.931,
+        "evidence_quote": "ORIGINAL CONTRACT AMOUNT $ 728,216.25\nPRESENT CONTRACT AMOUNT $ 932,658.25",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.9,
+          "grounding_score": 0.92,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": []
+      },
+      "contract_sum_prior_to_this_change_order": {
+        "value": 932658.25,
+        "confidence": 0.961,
+        "evidence_quote": "PRESENT CONTRACT AMOUNT $ 932,658.25",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 0.92,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": []
+      },
+      "this_change_order_amount": {
+        "value": 90749.0,
+        "confidence": 0.961,
+        "evidence_quote": "NET CHANGE $90,749.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 0.92,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": []
+      },
+      "new_contract_sum_including_this_change_order": {
+        "value": 1023409.25,
+        "confidence": 0.4,
+        "evidence_quote": "REVISED CONTRACT AMOUNT $1,023,409.25",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.35,
+          "grounding_score": 0.92,
+          "consistency_score": 0.3,
+          "document_quality_score": 0.9
+        },
+        "flags": [
+          "MATH_CONTRACT_SUM_MISMATCH"
+        ]
+      }
+    },
+    "line_items": [
+      {
+        "item_number": {
+          "value": "2",
+          "confidence": 0.961,
+          "evidence_quote": "2",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "Unclassified Excavation (2)",
+          "confidence": 0.961,
+          "evidence_quote": "Unclassified Excavation (2)",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "category": {
+          "value": null,
+          "confidence": 0.64,
+          "evidence_quote": null,
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.0,
+            "grounding_score": 0.85,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 3319.0,
+          "confidence": 0.961,
+          "evidence_quote": "3319.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "CY",
+          "confidence": 0.961,
+          "evidence_quote": "CY",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 13.0,
+          "confidence": 0.961,
+          "evidence_quote": "$13.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "total_amount": {
+          "value": 43147.0,
+          "confidence": 0.961,
+          "evidence_quote": "$43,147.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "row_confidence": 0.9151
+      },
+      {
+        "item_number": {
+          "value": "14",
+          "confidence": 0.961,
+          "evidence_quote": "14",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "Class A Concrete",
+          "confidence": 0.961,
+          "evidence_quote": "Class A Concrete",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "category": {
+          "value": null,
+          "confidence": 0.64,
+          "evidence_quote": null,
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.0,
+            "grounding_score": 0.85,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 289.4,
+          "confidence": 0.931,
+          "evidence_quote": "297.20 7.80",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.9,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "CY",
+          "confidence": 0.961,
+          "evidence_quote": "CY",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 400.0,
+          "confidence": 0.961,
+          "evidence_quote": "$400.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "total_amount": {
+          "value": 234.0,
+          "confidence": 0.4,
+          "evidence_quote": "$3,120.00 $2,886.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.35,
+            "grounding_score": 0.92,
+            "consistency_score": 0.3,
+            "document_quality_score": 0.9
+          },
+          "flags": [
+            "Arithmetic discrepancy: quantity * unit_price != total_amount",
+            "MATH_LINE_ITEM_MISMATCH"
+          ]
+        },
+        "row_confidence": 0.8307
+      },
+      {
+        "item_number": {
+          "value": "15",
+          "confidence": 0.961,
+          "evidence_quote": "15",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "Class B Concrete",
+          "confidence": 0.961,
+          "evidence_quote": "Class B Concrete",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "category": {
+          "value": null,
+          "confidence": 0.64,
+          "evidence_quote": null,
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.0,
+            "grounding_score": 0.85,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 9.7,
+          "confidence": 0.961,
+          "evidence_quote": "9.70",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "CY",
+          "confidence": 0.961,
+          "evidence_quote": "CY",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 970.0,
+          "confidence": 0.961,
+          "evidence_quote": "$970.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "total_amount": {
+          "value": 9409.0,
+          "confidence": 0.961,
+          "evidence_quote": "$9,409.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "row_confidence": 0.9151
+      },
+      {
+        "item_number": {
+          "value": "18",
+          "confidence": 0.961,
+          "evidence_quote": "18",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "4\" Concrete Sidewalks",
+          "confidence": 0.961,
+          "evidence_quote": "4\" Concrete Sidewalks",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "category": {
+          "value": null,
+          "confidence": 0.64,
+          "evidence_quote": null,
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.0,
+            "grounding_score": 0.85,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 632.0,
+          "confidence": 0.931,
+          "evidence_quote": "1576.00 944.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.9,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "SF",
+          "confidence": 0.961,
+          "evidence_quote": "SF",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 9.0,
+          "confidence": 0.961,
+          "evidence_quote": "$9.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "total_amount": {
+          "value": 5664.0,
+          "confidence": 0.4,
+          "evidence_quote": "$5,664.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.35,
+            "grounding_score": 0.92,
+            "consistency_score": 0.3,
+            "document_quality_score": 0.9
+          },
+          "flags": [
+            "Arithmetic discrepancy: quantity * unit_price != total_amount",
+            "MATH_LINE_ITEM_MISMATCH"
+          ]
+        },
+        "row_confidence": 0.8307
+      },
+      {
+        "item_number": {
+          "value": "20",
+          "confidence": 0.961,
+          "evidence_quote": "20",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "Removal of Structures and Obstructions",
+          "confidence": 0.961,
+          "evidence_quote": "Removal of Structures and Obstructions",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "category": {
+          "value": null,
+          "confidence": 0.64,
+          "evidence_quote": null,
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.0,
+            "grounding_score": 0.85,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 0.0,
+          "confidence": 0.961,
+          "evidence_quote": "3.00 3.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "LSum",
+          "confidence": 0.961,
+          "evidence_quote": "LSum",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 10000.0,
+          "confidence": 0.961,
+          "evidence_quote": "$10,000.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "total_amount": {
+          "value": 0.0,
+          "confidence": 0.961,
+          "evidence_quote": "$39,000.00 $39,000.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "row_confidence": 0.9151
+      },
+      {
+        "item_number": {
+          "value": "24",
+          "confidence": 0.961,
+          "evidence_quote": "24",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "Fence-Chain Link (Vinyl/Black Vinyl Coated)",
+          "confidence": 0.961,
+          "evidence_quote": "Fence-Chain Link (Vinyl/Black Vinyl Coated)",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "category": {
+          "value": null,
+          "confidence": 0.64,
+          "evidence_quote": null,
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.0,
+            "grounding_score": 0.85,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 312.0,
+          "confidence": 0.961,
+          "evidence_quote": "312.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "LF",
+          "confidence": 0.961,
+          "evidence_quote": "LF",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 45.0,
+          "confidence": 0.961,
+          "evidence_quote": "$45.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "total_amount": {
+          "value": 14040.0,
+          "confidence": 0.961,
+          "evidence_quote": "$14,040.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "row_confidence": 0.9151
+      },
+      {
+        "item_number": {
+          "value": "25",
+          "confidence": 0.961,
+          "evidence_quote": "25",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "Fence-Post and Rail",
+          "confidence": 0.961,
+          "evidence_quote": "Fence-Post and Rail",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "category": {
+          "value": null,
+          "confidence": 0.64,
+          "evidence_quote": null,
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.0,
+            "grounding_score": 0.85,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 116.0,
+          "confidence": 0.931,
+          "evidence_quote": "148.00 32.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.9,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "LF",
+          "confidence": 0.961,
+          "evidence_quote": "LF",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 24.25,
+          "confidence": 0.961,
+          "evidence_quote": "$24.25",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "total_amount": {
+          "value": 776.0,
+          "confidence": 0.4,
+          "evidence_quote": "$776.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.35,
+            "grounding_score": 0.92,
+            "consistency_score": 0.3,
+            "document_quality_score": 0.9
+          },
+          "flags": [
+            "Arithmetic discrepancy: quantity * unit_price != total_amount",
+            "MATH_LINE_ITEM_MISMATCH"
+          ]
+        },
+        "row_confidence": 0.8307
+      },
+      {
+        "item_number": {
+          "value": "26",
+          "confidence": 0.961,
+          "evidence_quote": "26",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "(PL) Wood Privacy Fence (6')",
+          "confidence": 0.961,
+          "evidence_quote": "(PL) Wood Privacy Fence (6')",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "category": {
+          "value": null,
+          "confidence": 0.64,
+          "evidence_quote": null,
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.0,
+            "grounding_score": 0.85,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 403.0,
+          "confidence": 0.901,
+          "evidence_quote": "488.00 85.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.8,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "LF",
+          "confidence": 0.961,
+          "evidence_quote": "LF",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 51.0,
+          "confidence": 0.961,
+          "evidence_quote": "$51.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "total_amount": {
+          "value": 4335.0,
+          "confidence": 0.4,
+          "evidence_quote": "$4,335.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.35,
+            "grounding_score": 0.92,
+            "consistency_score": 0.3,
+            "document_quality_score": 0.9
+          },
+          "flags": [
+            "Arithmetic discrepancy: quantity * unit_price != total_amount",
+            "MATH_LINE_ITEM_MISMATCH"
+          ]
+        },
+        "row_confidence": 0.8264
+      },
+      {
+        "item_number": {
+          "value": "27",
+          "confidence": 0.961,
+          "evidence_quote": "27",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "(PL) Wood Privacy Fence (8')",
+          "confidence": 0.961,
+          "evidence_quote": "(PL) Wood Privacy Fence (8')",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "category": {
+          "value": null,
+          "confidence": 0.64,
+          "evidence_quote": null,
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.0,
+            "grounding_score": 0.85,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 470.0,
+          "confidence": 0.931,
+          "evidence_quote": "475.00 5.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.9,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "LF",
+          "confidence": 0.961,
+          "evidence_quote": "LF",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 77.0,
+          "confidence": 0.961,
+          "evidence_quote": "$77.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "total_amount": {
+          "value": -4335.0,
+          "confidence": 0.4,
+          "evidence_quote": "$4,335.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.35,
+            "grounding_score": 0.92,
+            "consistency_score": 0.3,
+            "document_quality_score": 0.9
+          },
+          "flags": [
+            "Arithmetic discrepancy: quantity * unit_price != total_amount",
+            "MATH_LINE_ITEM_MISMATCH"
+          ]
+        },
+        "row_confidence": 0.8307
+      }
+    ]
+  }
+}

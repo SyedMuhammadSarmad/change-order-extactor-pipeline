@@ -1,0 +1,608 @@
+{
+  "provider_used": "gemini",
+  "overall_confidence": 0.9433,
+  "needs_human_review": false,
+  "review_reasons": [],
+  "document_quality": {
+    "source_filename": "aia_g701_wheaton.pdf",
+    "source_type": "pdf",
+    "page_count": 2,
+    "total_characters": 2,
+    "estimated_ocr_noise_ratio": 0.05,
+    "document_quality_score": 0.9,
+    "quality_notes": [
+      "Image-only scanned PDF (extracted via multimodal vision)"
+    ]
+  },
+  "validation": {
+    "is_valid": true,
+    "line_items_math_valid": true,
+    "cost_reconciliation_valid": true,
+    "contract_rollforward_valid": true,
+    "anomalies": []
+  },
+  "data": {
+    "change_order_number": {
+      "value": "001",
+      "confidence": 0.958,
+      "evidence_quote": "Change Order Number: 001",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.99,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "project_name": {
+      "value": "Wheaton Park District Arrowhead Environmental Storage Building",
+      "confidence": 0.955,
+      "evidence_quote": "PROJECT: (Name and address)\nWheaton Park District\nProject #19066\nArrowhead Environmental Storage\nBuilding",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.98,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "project_number": {
+      "value": "19066",
+      "confidence": 0.958,
+      "evidence_quote": "Project #19066",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.99,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "title": {
+      "value": "Additional insulation; Add (3) heating units",
+      "confidence": 0.946,
+      "evidence_quote": "Provide additional insulation; add (3) heating units per COR #1.",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.95,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "status": {
+      "value": null,
+      "confidence": 0.64,
+      "evidence_quote": null,
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.0,
+        "grounding_score": 0.85,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "effective_or_approval_date": {
+      "value": "5/24/2020",
+      "confidence": 0.955,
+      "evidence_quote": "5/24/2020",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.98,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "issue_date": {
+      "value": "May 12, 2020",
+      "confidence": 0.958,
+      "evidence_quote": "DATE: May 12, 2020",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.99,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "reason_for_change": {
+      "value": "Provide additional insulation; add (3) heating units per COR #1.",
+      "confidence": 0.955,
+      "evidence_quote": "Provide additional insulation; add (3) heating units per COR #1. Total: $11,885.00",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.98,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "scope_of_work_summary": {
+      "value": "Provide additional insulation; add (3) heating units per COR #1. Includes Electrical work for 17,000 BTU electric wall heaters, Wall Insulation, and Roofing.",
+      "confidence": 0.946,
+      "evidence_quote": "Provide additional insulation; add (3) heating units per COR #1.\nElectrical\nProvide (3) 17,000 BTU electric wall heaters and related circuits and connections\nWall Insulation\nProvide added insulation at perimeter walls\nRoofing\nProvided added roofing insulation",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.95,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "owner_name": {
+      "value": "Wheaton Park District",
+      "confidence": 0.958,
+      "evidence_quote": "OWNER: (Name and address)\nWheaton Park District",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.99,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "general_contractor_name": {
+      "value": "Integral Construction, Inc.",
+      "confidence": 0.958,
+      "evidence_quote": "CONTRACTOR: (Firm name)\nIntegral Construction, Inc.",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.99,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "subcontractor_name": {
+      "value": null,
+      "confidence": 0.64,
+      "evidence_quote": null,
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.0,
+        "grounding_score": 0.85,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "schedule_impact_days": {
+      "value": 0,
+      "confidence": 0.958,
+      "evidence_quote": "The contract Time will be unchanged by Zero (0) days.",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 0.99,
+        "grounding_score": 0.92,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.9
+      },
+      "flags": []
+    },
+    "cost_summary": {
+      "subtotal": {
+        "value": 10805.0,
+        "confidence": 0.958,
+        "evidence_quote": "COR Subtotal $ 10,805.00",
+        "source_page": 2,
+        "signals": {
+          "llm_self_confidence": 0.99,
+          "grounding_score": 0.92,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": []
+      },
+      "overhead_and_profit": {
+        "value": 1080.0,
+        "confidence": 0.952,
+        "evidence_quote": "General Requirements\n540.00\nLiability Insurance\n108.00\nBuilders Risk Insurance\n0.00\nPerformance & Payment Bond\n108.00\nFee\n324.00",
+        "source_page": 2,
+        "signals": {
+          "llm_self_confidence": 0.97,
+          "grounding_score": 0.92,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": []
+      },
+      "tax_amount": {
+        "value": 0.0,
+        "confidence": 0.91,
+        "evidence_quote": null,
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.9,
+          "grounding_score": 0.85,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": [
+          "IMPLICIT_ZERO_NOT_STATED"
+        ]
+      },
+      "total_change_order_amount": {
+        "value": 11885.0,
+        "confidence": 0.958,
+        "evidence_quote": "COR GRAND TOTAL $ 11,885.00",
+        "source_page": 2,
+        "signals": {
+          "llm_self_confidence": 0.99,
+          "grounding_score": 0.92,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": []
+      }
+    },
+    "contract_reconciliation": {
+      "original_contract_sum": {
+        "value": 375320.0,
+        "confidence": 0.958,
+        "evidence_quote": "The original Contract Sum was\n$ 375,320.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.99,
+          "grounding_score": 0.92,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": []
+      },
+      "net_change_by_previous_change_orders": {
+        "value": 0.0,
+        "confidence": 0.958,
+        "evidence_quote": "The net change by previously authorized Change Orders\n$ 0.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.99,
+          "grounding_score": 0.92,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": []
+      },
+      "contract_sum_prior_to_this_change_order": {
+        "value": 375320.0,
+        "confidence": 0.958,
+        "evidence_quote": "The Contract Sum prior to this Change Order was\n$ 375,320.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.99,
+          "grounding_score": 0.92,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": []
+      },
+      "this_change_order_amount": {
+        "value": 11885.0,
+        "confidence": 0.958,
+        "evidence_quote": "The Contract Sum will be increased by this Change Order in the amount of\n$ 11,885.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.99,
+          "grounding_score": 0.92,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": []
+      },
+      "new_contract_sum_including_this_change_order": {
+        "value": 387205.0,
+        "confidence": 0.958,
+        "evidence_quote": "The new Contract Sum including this Change Order will be\n$ 387,205.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.99,
+          "grounding_score": 0.92,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.9
+        },
+        "flags": []
+      }
+    },
+    "line_items": [
+      {
+        "item_number": {
+          "value": "26-0000",
+          "confidence": 0.958,
+          "evidence_quote": "26-0000",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "Provide (3) 17,000 BTU electric wall heaters and related circuits and connections",
+          "confidence": 0.955,
+          "evidence_quote": "Provide (3) 17,000 BTU electric wall heaters and related circuits and connections",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.98,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "category": {
+          "value": "Electrical",
+          "confidence": 0.958,
+          "evidence_quote": "Electrical",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 1.0,
+          "confidence": 0.958,
+          "evidence_quote": "1.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "LS",
+          "confidence": 0.958,
+          "evidence_quote": "LS",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 3465.0,
+          "confidence": 0.76,
+          "evidence_quote": null,
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.95,
+            "grounding_score": 0.3,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": [
+            "MISSING_EVIDENCE_QUOTE"
+          ]
+        },
+        "total_amount": {
+          "value": 3465.0,
+          "confidence": 0.958,
+          "evidence_quote": "3,465.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "row_confidence": 0.9293
+      },
+      {
+        "item_number": {
+          "value": "09-5600",
+          "confidence": 0.958,
+          "evidence_quote": "09-5600",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "Provide added insulation at perimeter walls",
+          "confidence": 0.955,
+          "evidence_quote": "Provide added insulation at perimeter walls",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.98,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "category": {
+          "value": "Wall Insulation",
+          "confidence": 0.958,
+          "evidence_quote": "Wall Insulation",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 1.0,
+          "confidence": 0.958,
+          "evidence_quote": "1.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "LS",
+          "confidence": 0.958,
+          "evidence_quote": "LS",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 4840.0,
+          "confidence": 0.76,
+          "evidence_quote": null,
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.95,
+            "grounding_score": 0.3,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": [
+            "MISSING_EVIDENCE_QUOTE"
+          ]
+        },
+        "total_amount": {
+          "value": 4840.0,
+          "confidence": 0.958,
+          "evidence_quote": "4,840.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "row_confidence": 0.9293
+      },
+      {
+        "item_number": {
+          "value": "07-2000",
+          "confidence": 0.958,
+          "evidence_quote": "07-2000",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "Provided added roofing insulation",
+          "confidence": 0.955,
+          "evidence_quote": "Provided added roofing insulation",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.98,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "category": {
+          "value": "Roofing",
+          "confidence": 0.958,
+          "evidence_quote": "Roofing",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 1.0,
+          "confidence": 0.958,
+          "evidence_quote": "1.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "LS",
+          "confidence": 0.958,
+          "evidence_quote": "LS",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 2500.0,
+          "confidence": 0.76,
+          "evidence_quote": null,
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.95,
+            "grounding_score": 0.3,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": [
+            "MISSING_EVIDENCE_QUOTE"
+          ]
+        },
+        "total_amount": {
+          "value": 2500.0,
+          "confidence": 0.958,
+          "evidence_quote": "2,500.00",
+          "source_page": 2,
+          "signals": {
+            "llm_self_confidence": 0.99,
+            "grounding_score": 0.92,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.9
+          },
+          "flags": []
+        },
+        "row_confidence": 0.9293
+      }
+    ]
+  }
+}

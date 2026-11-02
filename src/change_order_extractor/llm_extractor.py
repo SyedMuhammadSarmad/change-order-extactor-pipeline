@@ -11,38 +11,56 @@ from .schemas import (
     ScoredField,
 )
 
-SYSTEM_PROMPT = f"""You are a Construction Cost Engineer AI.
+SYSTEM_PROMPT = f"""You are an expert Construction Cost Engineer and Document Verification AI.
 Extract the Change Order into a JSON object matching this exact JSON Schema:
 {json.dumps(ChangeOrderExtraction.model_json_schema())}
-Rules:
-1. Wrap every field in ScoredField with value, confidence (0.0-1.0), and verbatim evidence_quote from the text.
-2. Do NOT fix contractor math errors; extract the exact numbers printed in the document.
-3. Lower confidence (< 0.65) if a number has OCR glitches like 'O' instead of '0'.
+
+Strict Rules:
+1. Wrap every field in ScoredField with value, confidence (0.0-1.0), and verbatim evidence_quote from the text/image.
+2. DATES (AIA G701 & Construction Forms):
+   - `issue_date`: The date the Change Order document was issued (labeled 'DATE:' next to Change Order Number, e.g. 'November 1, 2024'). NEVER put 'CONTRACT DATE:' (the original prime contract date, e.g. 2021 or 2022) into `issue_date`!
+   - `effective_or_approval_date`: The execution or signature approval date (often beside Owner/Architect signature, or effective date).
+   - If a project number or status is not explicitly stated in the document, return `value: null` with `evidence_quote: null`.
+3. OPTIONAL COSTS (Overhead & Profit, Tax):
+   - If Overhead & Profit or Sales Tax are NOT explicitly stated as separate line items on the document, set `value: 0.0` or `null` with `evidence_quote: null`.
+   - If no separate markup lines exist, set `cost_summary.subtotal` equal to `cost_summary.total_change_order_amount`.
+4. MUNICIPAL CIVIL UNIT-PRICE SCHEDULES (Multi-column Quantity Increase/Decrease Tables):
+   - Municipal civil tables commonly have 9 columns:
+     [ITEM | DESCRIPTION | UNIT | QUANTITY | QUANTITY INCREASE | QUANTITY DECREASE | UNIT PRICE | COST INCREASE | COST DECREASE]
+   - NEVER use the 4th column ('QUANTITY') — that is only the old original contract base quantity!
+   - For `quantity`: Take exclusively from 'QUANTITY INCREASE' (as positive float) or 'QUANTITY DECREASE' (as negative float).
+   - For `total_amount`: Take exclusively from 'COST INCREASE' (as positive float) or 'COST DECREASE' (as negative float).
+   - Preserve exact 1-to-1 rows. Do not duplicate rows. Each printed table row with an Item number is one line item.
+   - Double-check each row arithmetic: `quantity * unit_price == total_amount` must hold for each change item.
+   - The sum of all line item `total_amount` values must equal the table Net Change / Total!
+5. Do NOT silently fix contractor math errors if they are printed on the document; extract what is printed verbatim.
+6. Lower confidence (< 0.65) if a number has OCR glitches like 'O' instead of '0'.
 """
 
 
-def extract_with_gemini(doc:IngestedDocument,api_key:str) -> ChangeOrderExtraction:
+def extract_with_gemini(doc: IngestedDocument, api_key: str) -> ChangeOrderExtraction:
     from google import genai
     from google.genai import types
 
-    client = genai.Client(api_key = api_key)
+    client = genai.Client(api_key=api_key)
 
     contents: list[Any] = [f"Extract change order from: \n\n{doc.full_text}"]
 
     for img_bytes in doc.page_images_png:
-        contents.append(types.Part.from_bytes(data = img_bytes, mime_type="image/png"))
+        contents.append(types.Part.from_bytes(data=img_bytes, mime_type="image/png"))
 
     response = client.models.generate_content(
-        model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash"),
-        contents = contents,
-        config = types.GenerateContentConfig(
-            system_instruction = SYSTEM_PROMPT,
-            temperature = 0,
-            response_mime_type = "application/json",
+        model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash"),
+        contents=contents,
+        config=types.GenerateContentConfig(
+            system_instruction=SYSTEM_PROMPT,
+            temperature=0,
+            response_mime_type="application/json",
         ),
     )
 
     return ChangeOrderExtraction.model_validate_json(response.text)
+
 
 def parse_ocr_float(raw: Optional[str]) -> tuple[Optional[float], bool]:
     if not raw:
@@ -54,6 +72,8 @@ def parse_ocr_float(raw: Optional[str]) -> tuple[Optional[float], bool]:
         return float(cleaned), had_glitch
     except ValueError:
         return None, had_glitch
+
+
 def extract_offline(doc: IngestedDocument) -> ChangeOrderExtraction:
     text = doc.full_text
 
@@ -162,4 +182,3 @@ def extract_with_provider(
     if provider == "gemini" or (provider == "auto" and api_key):
         return extract_with_gemini(doc, api_key), "gemini"
     return extract_offline(doc), "offline-hybrid"
-    

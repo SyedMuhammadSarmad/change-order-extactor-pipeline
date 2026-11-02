@@ -1,64 +1,102 @@
 from typing import Any
 from .ingestor import estimate_ocr_noise
-from .schemas import(
+from .schemas import (
     ChangeOrderExtraction,
     ConfidenceSignals,
     DocumentQualityReport,
     ScoredField,
-    ValidationReport
+    ValidationReport,
 )
 
-def compute_grounding_score(value:Any, evidence_quote:str|None, source_text:str) -> tuple[float,list[str]]:
-    flags:list[str] = []
+
+def compute_grounding_score(
+    value: Any, evidence_quote: str | None, source_text: str
+) -> tuple[float, list[str]]:
+    flags: list[str] = []
     if value is None:
-        return 0.8,flags
+        return 0.85, flags
     if not evidence_quote or not evidence_quote.strip():
-        return 0.3,["MISSING_EVIDENCE_QUOTE"]
+        # If a numeric fee (like tax or O&P) is zero because it is not separately stated,
+        # do not penalize as missing evidence.
+        if value == 0 or value == 0.0:
+            return 0.85, ["IMPLICIT_ZERO_NOT_STATED"]
+        return 0.3, ["MISSING_EVIDENCE_QUOTE"]
 
-    if evidence_quote.strip().lower() in source_text.lower():
+    # If the document is a scanned image-only PDF (no digital text layer),
+    # evidence quotes come from multimodal vision OCR.
+    if len(source_text.strip()) < 20:
+        score = 0.92
+    elif evidence_quote.strip().lower() in source_text.lower():
         score = 1.0
-
+    elif str(value).strip().lower() in source_text.lower():
+        score = 0.90
     else:
-        score = 0.4
-        flags.append("WEAK_SOURCE_GROUNDING")
+        norm_quote = " ".join(evidence_quote.lower().split())
+        norm_source = " ".join(source_text.lower().split())
+        if norm_quote in norm_source:
+            score = 1.0
+        else:
+            score = 0.45
+            flags.append("WEAK_SOURCE_GROUNDING")
 
-    noise,_ = estimate_ocr_noise(evidence_quote)
+    noise, _ = estimate_ocr_noise(evidence_quote)
     if noise > 0.0:
-        score =  max(0.3,score - 0.35)
+        score = max(0.3, score - 0.35)
         flags.append("OCR_CORRUPTED_EVIDENCE")
 
-    return round(score,4) , flags
+    return round(score, 4), flags
 
-def calibrate_field(field_obj: ScoredField[Any], source_text: str, doc_quality: DocumentQualityReport,) -> float:
+
+def calibrate_field(
+    field_obj: ScoredField[Any],
+    source_text: str,
+    doc_quality: DocumentQualityReport,
+) -> float:
     llm_conf = field_obj.confidence
-    grounding_score,g_flags = compute_grounding_score(field_obj.value, field_obj.evidence_quote, source_text)
-
+    grounding_score, g_flags = compute_grounding_score(
+        field_obj.value, field_obj.evidence_quote, source_text
+    )
 
     has_math_error = any(f.startswith("MATH_") for f in field_obj.flags)
-    consistency_score = 0.35 if has_math_error else 1.0
+    consistency_score = 0.30 if has_math_error else 1.0
     doc_score = doc_quality.document_quality_score
     for flag in g_flags:
         if flag not in field_obj.flags:
             field_obj.flags.append(flag)
 
-    final_score = ( 0.3 * llm_conf + 0.3 * grounding_score + 0.25 * consistency_score + 0.15 * doc_score)
+    final_score = (
+        0.30 * llm_conf
+        + 0.30 * grounding_score
+        + 0.25 * consistency_score
+        + 0.15 * doc_score
+    )
 
     if has_math_error:
-        final_score = min(final_score,0.45)
-    elif "OCR_CORRUPTED_EVIDENCE" in field_obj.flags or "OCR_DIGIT_SUBSTITUTION" in field_obj.flags:
-        final_score = min(final_score,0.65)
+        final_score = min(final_score, 0.40)
+    elif (
+        "OCR_CORRUPTED_EVIDENCE" in field_obj.flags
+        or "OCR_DIGIT_SUBSTITUTION" in field_obj.flags
+    ):
+        final_score = min(final_score, 0.65)
 
-    field_obj.confidence = round(final_score,4)
+    field_obj.confidence = round(final_score, 4)
     field_obj.signals = ConfidenceSignals(
-        llm_self_confidence = round(llm_conf,4),
-        grounding_score = round(grounding_score,4),
-        consistency_score = round(consistency_score,4),
-        document_quality_score = round(doc_score,4),
+        llm_self_confidence=round(llm_conf, 4),
+        grounding_score=round(grounding_score, 4),
+        consistency_score=round(consistency_score, 4),
+        document_quality_score=round(doc_score, 4),
     )
 
     return field_obj.confidence
 
-def calibrate_extraction(extraction:ChangeOrderExtraction,source_text:str,doc_quality:DocumentQualityReport,validation_report:ValidationReport,review_threshold:float = 0.80,) -> tuple[float,bool,list[str]]:
+
+def calibrate_extraction(
+    extraction: ChangeOrderExtraction,
+    source_text: str,
+    doc_quality: DocumentQualityReport,
+    validation_report: ValidationReport,
+    review_threshold: float = 0.80,
+) -> tuple[float, bool, list[str]]:
     cs = extraction.cost_summary
     cr = extraction.contract_reconciliation
 
@@ -88,7 +126,7 @@ def calibrate_extraction(extraction:ChangeOrderExtraction,source_text:str,doc_qu
     ]
 
     for f in all_fields:
-        calibrate_field(f,source_text,doc_quality)
+        calibrate_field(f, source_text, doc_quality)
 
     for item in extraction.line_items:
         row_fields = [
@@ -101,33 +139,59 @@ def calibrate_extraction(extraction:ChangeOrderExtraction,source_text:str,doc_qu
             item.total_amount,
         ]
 
-        scores = [calibrate_field(rf,source_text,doc_quality) for rf in row_fields]
-        item.row_confidence = round(sum(scores)/len(scores),4)
+        scores = [calibrate_field(rf, source_text, doc_quality) for rf in row_fields]
+        item.row_confidence = round(sum(scores) / len(scores), 4)
 
     critical_fields = [
         ("change_order_number", extraction.change_order_number),
         ("project_name", extraction.project_name),
         ("cost_summary.subtotal", cs.subtotal),
-        ("cost_summary.total_change_order_amount",cs.total_change_order_amount)
+        ("cost_summary.total_change_order_amount", cs.total_change_order_amount),
     ]
 
-    overall_confidence = round(sum(f.confidence for _, f in critical_fields)/len(critical_fields),4)
+    crit_avg = sum(f.confidence for _, f in critical_fields) / len(critical_fields)
 
-    review_reasons:list[str] = []
+    # If line items exist, blend them into the overall confidence score
+    if extraction.line_items:
+        items_avg = sum(item.row_confidence for item in extraction.line_items) / len(
+            extraction.line_items
+        )
+        raw_overall = 0.50 * crit_avg + 0.50 * items_avg
+    else:
+        raw_overall = crit_avg
+
+    # Hard confidence penalty on arithmetic/validation failures
+    has_critical_error = any(
+        a.severity == "CRITICAL" for a in validation_report.anomalies
+    )
+    has_math_error = any(
+        a.code.startswith("MATH_") for a in validation_report.anomalies
+    )
+
+    if has_critical_error:
+        raw_overall = min(raw_overall, 0.55)
+    elif has_math_error:
+        raw_overall = min(raw_overall, 0.65)
+
+    overall_confidence = round(raw_overall, 4)
+
+    review_reasons: list[str] = []
 
     if not validation_report.is_valid:
         for anomaly in validation_report.anomalies:
-            review_reasons.append(f"[{anomaly.code}]{anomaly.message}")
+            review_reasons.append(f"[{anomaly.code}] {anomaly.message}")
 
-    for name,f in critical_fields:
+    for name, f in critical_fields:
         if f.confidence < review_threshold:
             review_reasons.append(
                 f"Low confidence on {name} ({f.confidence}<{review_threshold})"
             )
 
     if doc_quality.estimated_ocr_noise_ratio >= 0.1:
-        review_reasons.append("High OCR noise detected in document") 
+        review_reasons.append("High OCR noise detected in document")
 
-    needs_human_review = len(review_reasons) > 0 or overall_confidence < review_threshold
+    needs_human_review = (
+        len(review_reasons) > 0 or overall_confidence < review_threshold
+    )
 
     return overall_confidence, needs_human_review, review_reasons

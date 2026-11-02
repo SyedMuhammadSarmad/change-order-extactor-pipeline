@@ -76,11 +76,19 @@ def ingest_file(file_path:str | Path) -> IngestedDocument:
 
     page_images:list[bytes] = []
 
-    if noise_ratio>0.1 or any(len(p)<60 for p in pages):
+    if noise_ratio > 0.1 or any(len(p) < 60 for p in pages):
         for page in doc:
-            page_images.append(page.get_pixmap(dpi=150).tobytes("png"))
+            page_images.append(page.get_pixmap(dpi=200).tobytes("png"))
     doc.close()
-    quality_score = round(max(0.15, 1.0 - noise_ratio), 4)
+
+    # If the PDF has no embedded digital text layer (< 20 chars) but rendered page images exist,
+    # it is a scanned image-only PDF (extracted via multimodal vision), not an empty document.
+    if len(full_text.strip()) < 20 and len(page_images) > 0:
+        noise_ratio = 0.05
+        quality_score = 0.90
+        notes = ["Image-only scanned PDF (extracted via multimodal vision)"]
+    else:
+        quality_score = round(max(0.15, 1.0 - noise_ratio), 4)
     report = DocumentQualityReport(
         source_filename = path.name,
         source_type = "pdf",
