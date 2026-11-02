@@ -1,5 +1,6 @@
 import os
 import re
+import json
 from typing import Any, Optional
 from .ingestor import IngestedDocument
 from .schemas import (
@@ -10,8 +11,10 @@ from .schemas import (
     ScoredField,
 )
 
-SYSTEM_PROMPT = """You are a Construction Cost Engineer AI.
-Extract the Change Order into the requested JSON schema.
+SYSTEM_PROMPT = f"""You are a Construction Cost Engineer AI.
+Extract the Change Order into a JSON object matching this exact JSON Schema:
+{json.dumps(ChangeOrderExtraction.model_json_schema())}
+Rules:
 1. Wrap every field in ScoredField with value, confidence (0.0-1.0), and verbatim evidence_quote from the text.
 2. Do NOT fix contractor math errors; extract the exact numbers printed in the document.
 3. Lower confidence (< 0.65) if a number has OCR glitches like 'O' instead of '0'.
@@ -36,7 +39,6 @@ def extract_with_gemini(doc:IngestedDocument,api_key:str) -> ChangeOrderExtracti
             system_instruction = SYSTEM_PROMPT,
             temperature = 0,
             response_mime_type = "application/json",
-            response_schema = ChangeOrderExtraction,
         ),
     )
 
