@@ -1,0 +1,504 @@
+{
+  "provider_used": "gemini",
+  "overall_confidence": 1.0,
+  "needs_human_review": false,
+  "review_reasons": [],
+  "document_quality": {
+    "source_filename": "co_01_clean.pdf",
+    "source_type": "pdf",
+    "page_count": 1,
+    "total_characters": 857,
+    "estimated_ocr_noise_ratio": 0.0,
+    "document_quality_score": 1.0,
+    "quality_notes": []
+  },
+  "validation": {
+    "is_valid": true,
+    "line_items_math_valid": true,
+    "cost_reconciliation_valid": true,
+    "contract_rollforward_valid": true,
+    "anomalies": []
+  },
+  "data": {
+    "change_order_number": {
+      "value": "CO-004",
+      "confidence": 1.0,
+      "evidence_quote": "CHANGE ORDER NO: CO-004",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "project_name": {
+      "value": "Apex Commercial Tower",
+      "confidence": 1.0,
+      "evidence_quote": "PROJECT: Apex Commercial Tower",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "project_number": {
+      "value": "PRJ-089",
+      "confidence": 1.0,
+      "evidence_quote": "PROJECT NUMBER: PRJ-089",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "title": {
+      "value": "Structural Steel Reinforcement",
+      "confidence": 1.0,
+      "evidence_quote": "TITLE: Structural Steel Reinforcement",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "status": {
+      "value": "APPROVED",
+      "confidence": 1.0,
+      "evidence_quote": "STATUS: APPROVED",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "effective_or_approval_date": {
+      "value": "2026-09-22",
+      "confidence": 1.0,
+      "evidence_quote": "EFFECTIVE DATE: 2026-09-22",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "issue_date": {
+      "value": "2026-09-15",
+      "confidence": 1.0,
+      "evidence_quote": "ISSUE DATE: 2026-09-15",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "reason_for_change": {
+      "value": "Structural revision per ASI-014",
+      "confidence": 1.0,
+      "evidence_quote": "REASON FOR CHANGE: Structural revision per ASI-014",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "scope_of_work_summary": {
+      "value": "Furnish and weld 16 stiffener plates",
+      "confidence": 1.0,
+      "evidence_quote": "SCOPE OF WORK: Furnish and weld 16 stiffener plates",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "owner_name": {
+      "value": "Horizon Partners",
+      "confidence": 1.0,
+      "evidence_quote": "OWNER: Horizon Partners",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "general_contractor_name": {
+      "value": "Turner Corp",
+      "confidence": 1.0,
+      "evidence_quote": "GENERAL CONTRACTOR: Turner Corp",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "subcontractor_name": {
+      "value": "Atlas Steel",
+      "confidence": 1.0,
+      "evidence_quote": "SUBCONTRACTOR: Atlas Steel",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "schedule_impact_days": {
+      "value": 4,
+      "confidence": 1.0,
+      "evidence_quote": "SCHEDULE IMPACT: 4 DAYS",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "cost_summary": {
+      "subtotal": {
+        "value": 8000.0,
+        "confidence": 1.0,
+        "evidence_quote": "SUBTOTAL: $8,000.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "overhead_and_profit": {
+        "value": 800.0,
+        "confidence": 1.0,
+        "evidence_quote": "OVERHEAD AND PROFIT: $800.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "tax_amount": {
+        "value": 0.0,
+        "confidence": 1.0,
+        "evidence_quote": "SALES TAX: $0.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "total_change_order_amount": {
+        "value": 8800.0,
+        "confidence": 1.0,
+        "evidence_quote": "TOTAL CHANGE ORDER AMOUNT: $8,800.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      }
+    },
+    "contract_reconciliation": {
+      "original_contract_sum": {
+        "value": 100000.0,
+        "confidence": 1.0,
+        "evidence_quote": "ORIGINAL CONTRACT SUM: $100,000.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "net_change_by_previous_change_orders": {
+        "value": 0.0,
+        "confidence": 1.0,
+        "evidence_quote": "NET CHANGE BY PREVIOUS CHANGE ORDERS: $0.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "contract_sum_prior_to_this_change_order": {
+        "value": 100000.0,
+        "confidence": 1.0,
+        "evidence_quote": "CONTRACT SUM PRIOR TO THIS CHANGE ORDER: $100,000.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "this_change_order_amount": {
+        "value": 8800.0,
+        "confidence": 1.0,
+        "evidence_quote": "THIS CHANGE ORDER AMOUNT: $8,800.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "new_contract_sum_including_this_change_order": {
+        "value": 108800.0,
+        "confidence": 1.0,
+        "evidence_quote": "NEW CONTRACT SUM INCLUDING THIS CHANGE ORDER: $108,800.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      }
+    },
+    "line_items": [
+      {
+        "item_number": {
+          "value": "01",
+          "confidence": 1.0,
+          "evidence_quote": "01 | Steel Stiffener Plates | MATERIAL | 16 | EA | $225.00 | $3,600.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "Steel Stiffener Plates",
+          "confidence": 1.0,
+          "evidence_quote": "01 | Steel Stiffener Plates | MATERIAL | 16 | EA | $225.00 | $3,600.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "category": {
+          "value": "MATERIAL",
+          "confidence": 1.0,
+          "evidence_quote": "01 | Steel Stiffener Plates | MATERIAL | 16 | EA | $225.00 | $3,600.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 16.0,
+          "confidence": 1.0,
+          "evidence_quote": "01 | Steel Stiffener Plates | MATERIAL | 16 | EA | $225.00 | $3,600.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "EA",
+          "confidence": 1.0,
+          "evidence_quote": "01 | Steel Stiffener Plates | MATERIAL | 16 | EA | $225.00 | $3,600.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 225.0,
+          "confidence": 1.0,
+          "evidence_quote": "$225.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "total_amount": {
+          "value": 3600.0,
+          "confidence": 1.0,
+          "evidence_quote": "$3,600.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "row_confidence": 1.0
+      },
+      {
+        "item_number": {
+          "value": "02",
+          "confidence": 1.0,
+          "evidence_quote": "02 | Welder Field Labor | LABOR | 40 | HR | $110.00 | $4,400.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "Welder Field Labor",
+          "confidence": 1.0,
+          "evidence_quote": "02 | Welder Field Labor | LABOR | 40 | HR | $110.00 | $4,400.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "category": {
+          "value": "LABOR",
+          "confidence": 1.0,
+          "evidence_quote": "02 | Welder Field Labor | LABOR | 40 | HR | $110.00 | $4,400.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 40.0,
+          "confidence": 1.0,
+          "evidence_quote": "02 | Welder Field Labor | LABOR | 40 | HR | $110.00 | $4,400.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "HR",
+          "confidence": 1.0,
+          "evidence_quote": "02 | Welder Field Labor | LABOR | 40 | HR | $110.00 | $4,400.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 110.0,
+          "confidence": 1.0,
+          "evidence_quote": "$110.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "total_amount": {
+          "value": 4400.0,
+          "confidence": 1.0,
+          "evidence_quote": "$4,400.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "row_confidence": 1.0
+      }
+    ]
+  }
+}

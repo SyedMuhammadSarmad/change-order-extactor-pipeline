@@ -1,0 +1,422 @@
+{
+  "provider_used": "gemini",
+  "overall_confidence": 0.9,
+  "needs_human_review": true,
+  "review_reasons": [
+    "Low confidence on cost_summary.subtotal (0.65<0.8)",
+    "High OCR noise detected in document"
+  ],
+  "document_quality": {
+    "source_filename": "co_02_ocr_scan.pdf",
+    "source_type": "pdf",
+    "page_count": 1,
+    "total_characters": 744,
+    "estimated_ocr_noise_ratio": 0.1111,
+    "document_quality_score": 0.8889,
+    "quality_notes": [
+      "Detected OCR glitches (2x):['$4,5O', '$4,5O']",
+      "Detected OCR glitches (1x):['2O']"
+    ]
+  },
+  "validation": {
+    "is_valid": true,
+    "line_items_math_valid": true,
+    "cost_reconciliation_valid": true,
+    "contract_rollforward_valid": true,
+    "anomalies": []
+  },
+  "data": {
+    "change_order_number": {
+      "value": "PCO-019",
+      "confidence": 0.9833,
+      "evidence_quote": "CHANGE ORDER NO: PCO-019",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.8889
+      },
+      "flags": []
+    },
+    "project_name": {
+      "value": "Oakridge Medical",
+      "confidence": 0.9833,
+      "evidence_quote": "PROJECT: Oakridge Medical",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.8889
+      },
+      "flags": []
+    },
+    "project_number": {
+      "value": "OMP-11",
+      "confidence": 0.9833,
+      "evidence_quote": "PROJECT NUMBER: OMP-11",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.8889
+      },
+      "flags": []
+    },
+    "title": {
+      "value": "Storm Drain Reroute",
+      "confidence": 0.9833,
+      "evidence_quote": "TITLE: Storm Drain Reroute",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.8889
+      },
+      "flags": []
+    },
+    "status": {
+      "value": "PENDING",
+      "confidence": 0.9833,
+      "evidence_quote": "STATUS: PENDING",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.8889
+      },
+      "flags": []
+    },
+    "effective_or_approval_date": {
+      "value": "2026-10-12",
+      "confidence": 0.9833,
+      "evidence_quote": "EFFECTIVE DATE: 2026-10-12",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.8889
+      },
+      "flags": []
+    },
+    "issue_date": {
+      "value": "2026-10-05",
+      "confidence": 0.9833,
+      "evidence_quote": "ISSUE DATE: 2026-10-05",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.8889
+      },
+      "flags": []
+    },
+    "reason_for_change": {
+      "value": "Unforeseen rock ledge",
+      "confidence": 0.9833,
+      "evidence_quote": "REASON FOR CHANGE: Unforeseen rock ledge",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.8889
+      },
+      "flags": []
+    },
+    "scope_of_work_summary": {
+      "value": "Trenching and pipe reroute",
+      "confidence": 0.9833,
+      "evidence_quote": "SCOPE OF WORK: Trenching and pipe reroute",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.8889
+      },
+      "flags": []
+    },
+    "owner_name": {
+      "value": "Oakridge Health",
+      "confidence": 0.9833,
+      "evidence_quote": "OWNER: Oakridge Health",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.8889
+      },
+      "flags": []
+    },
+    "general_contractor_name": {
+      "value": "Summit Builders",
+      "confidence": 0.9833,
+      "evidence_quote": "GENERAL CONTRACTOR: Summit Builders",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.8889
+      },
+      "flags": []
+    },
+    "subcontractor_name": {
+      "value": "RedRock Civil",
+      "confidence": 0.9833,
+      "evidence_quote": "SUBCONTRACTOR: RedRock Civil",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.8889
+      },
+      "flags": []
+    },
+    "schedule_impact_days": {
+      "value": 2,
+      "confidence": 0.9833,
+      "evidence_quote": "SCHEDULE IMPACT: 2 DAYS",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 0.8889
+      },
+      "flags": []
+    },
+    "cost_summary": {
+      "subtotal": {
+        "value": 4500.0,
+        "confidence": 0.65,
+        "evidence_quote": "SUBTOTAL: $4,5OO.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.6,
+          "grounding_score": 0.65,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.8889
+        },
+        "flags": [
+          "OCR_CORRUPTED_EVIDENCE"
+        ]
+      },
+      "overhead_and_profit": {
+        "value": 0.0,
+        "confidence": 0.9833,
+        "evidence_quote": "OVERHEAD AND PROFIT: $0.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.8889
+        },
+        "flags": []
+      },
+      "tax_amount": {
+        "value": 0.0,
+        "confidence": 0.9833,
+        "evidence_quote": "SALES TAX: $0.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.8889
+        },
+        "flags": []
+      },
+      "total_change_order_amount": {
+        "value": 4500.0,
+        "confidence": 0.9833,
+        "evidence_quote": "TOTAL CHANGE ORDER AMOUNT: $4,500.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.8889
+        },
+        "flags": []
+      }
+    },
+    "contract_reconciliation": {
+      "original_contract_sum": {
+        "value": 50000.0,
+        "confidence": 0.9833,
+        "evidence_quote": "ORIGINAL CONTRACT SUM: $50,000.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.8889
+        },
+        "flags": []
+      },
+      "net_change_by_previous_change_orders": {
+        "value": 0.0,
+        "confidence": 0.9833,
+        "evidence_quote": "NET CHANGE BY PREVIOUS CHANGE ORDERS: $0.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.8889
+        },
+        "flags": []
+      },
+      "contract_sum_prior_to_this_change_order": {
+        "value": 50000.0,
+        "confidence": 0.9833,
+        "evidence_quote": "CONTRACT SUM PRIOR TO THIS CHANGE ORDER: $50,000.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.8889
+        },
+        "flags": []
+      },
+      "this_change_order_amount": {
+        "value": 4500.0,
+        "confidence": 0.9833,
+        "evidence_quote": "THIS CHANGE ORDER AMOUNT: $4,500.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.8889
+        },
+        "flags": []
+      },
+      "new_contract_sum_including_this_change_order": {
+        "value": 54500.0,
+        "confidence": 0.9833,
+        "evidence_quote": "NEW CONTRACT SUM INCLUDING THIS CHANGE ORDER: $54,500.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 0.8889
+        },
+        "flags": []
+      }
+    },
+    "line_items": [
+      {
+        "item_number": {
+          "value": "01",
+          "confidence": 0.9833,
+          "evidence_quote": "01",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.8889
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "Excavator",
+          "confidence": 0.9833,
+          "evidence_quote": "Excavator",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.8889
+          },
+          "flags": []
+        },
+        "category": {
+          "value": "EQUIPMENT",
+          "confidence": 0.9833,
+          "evidence_quote": "EQUIPMENT",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.8889
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 20.0,
+          "confidence": 0.65,
+          "evidence_quote": "2O",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 0.6,
+            "grounding_score": 0.65,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.8889
+          },
+          "flags": [
+            "OCR_CORRUPTED_EVIDENCE"
+          ]
+        },
+        "unit": {
+          "value": "HR",
+          "confidence": 0.9833,
+          "evidence_quote": "HR",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.8889
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 225.0,
+          "confidence": 0.9833,
+          "evidence_quote": "$225.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.8889
+          },
+          "flags": []
+        },
+        "total_amount": {
+          "value": 4500.0,
+          "confidence": 0.65,
+          "evidence_quote": "$4,5OO.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 0.6,
+            "grounding_score": 0.65,
+            "consistency_score": 1.0,
+            "document_quality_score": 0.8889
+          },
+          "flags": [
+            "OCR_CORRUPTED_EVIDENCE"
+          ]
+        },
+        "row_confidence": 0.8881
+      }
+    ]
+  }
+}

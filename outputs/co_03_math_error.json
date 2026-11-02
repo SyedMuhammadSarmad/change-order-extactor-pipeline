@@ -1,0 +1,439 @@
+{
+  "provider_used": "gemini",
+  "overall_confidence": 0.8625,
+  "needs_human_review": true,
+  "review_reasons": [
+    "[MATH_LINE_ITEM_MISMATCH]Item 1:40.0 *85.0 = 3400.0, but PDF has 3800.0",
+    "[MATH_TOTAL_MISMATCH]Subtotal (3800.0) + O&P (380.0) + Tax (0.0) = 4180.0, but total is 4580.0",
+    "Low confidence on cost_summary.total_change_order_amount (0.45<0.8)"
+  ],
+  "document_quality": {
+    "source_filename": "co_03_math_error.pdf",
+    "source_type": "pdf",
+    "page_count": 1,
+    "total_characters": 750,
+    "estimated_ocr_noise_ratio": 0.0,
+    "document_quality_score": 1.0,
+    "quality_notes": []
+  },
+  "validation": {
+    "is_valid": false,
+    "line_items_math_valid": false,
+    "cost_reconciliation_valid": false,
+    "contract_rollforward_valid": true,
+    "anomalies": [
+      {
+        "code": "MATH_LINE_ITEM_MISMATCH",
+        "severity": "ERROR",
+        "field_paths": [
+          "line_items[0].total_amount"
+        ],
+        "message": "Item 1:40.0 *85.0 = 3400.0, but PDF has 3800.0",
+        "expected_value": 3400.0,
+        "actual_value": 3800.0
+      },
+      {
+        "code": "MATH_TOTAL_MISMATCH",
+        "severity": "CRITICAL",
+        "field_paths": [
+          "cost_summary.total_change_order_amount"
+        ],
+        "message": "Subtotal (3800.0) + O&P (380.0) + Tax (0.0) = 4180.0, but total is 4580.0",
+        "expected_value": 4180.0,
+        "actual_value": 4580.0
+      }
+    ]
+  },
+  "data": {
+    "change_order_number": {
+      "value": "CO-108",
+      "confidence": 1.0,
+      "evidence_quote": "CHANGE ORDER NO: CO-108",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "project_name": {
+      "value": "Harborview Lofts",
+      "confidence": 1.0,
+      "evidence_quote": "PROJECT: Harborview Lofts",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "project_number": {
+      "value": "HML-44",
+      "confidence": 1.0,
+      "evidence_quote": "PROJECT NUMBER: HML-44",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "title": {
+      "value": "Corridor Drywall Upgrade",
+      "confidence": 1.0,
+      "evidence_quote": "TITLE: Corridor Drywall Upgrade",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "status": {
+      "value": "DRAFT",
+      "confidence": 1.0,
+      "evidence_quote": "STATUS: DRAFT",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "effective_or_approval_date": {
+      "value": "2026-10-25",
+      "confidence": 1.0,
+      "evidence_quote": "EFFECTIVE DATE: 2026-10-25",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "issue_date": {
+      "value": "2026-10-18",
+      "confidence": 1.0,
+      "evidence_quote": "ISSUE DATE: 2026-10-18",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "reason_for_change": {
+      "value": "Fire marshal comment",
+      "confidence": 1.0,
+      "evidence_quote": "REASON FOR CHANGE: Fire marshal comment",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "scope_of_work_summary": {
+      "value": "Upgrade corridor shaftwall",
+      "confidence": 1.0,
+      "evidence_quote": "SCOPE OF WORK: Upgrade corridor shaftwall",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "owner_name": {
+      "value": "Harborview Dev",
+      "confidence": 1.0,
+      "evidence_quote": "OWNER: Harborview Dev",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "general_contractor_name": {
+      "value": "Pacific Coast GC",
+      "confidence": 1.0,
+      "evidence_quote": "GENERAL CONTRACTOR: Pacific Coast GC",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "subcontractor_name": {
+      "value": "Precision Drywall",
+      "confidence": 1.0,
+      "evidence_quote": "SUBCONTRACTOR: Precision Drywall",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "schedule_impact_days": {
+      "value": 1,
+      "confidence": 1.0,
+      "evidence_quote": "SCHEDULE IMPACT: 1 DAYS",
+      "source_page": 1,
+      "signals": {
+        "llm_self_confidence": 1.0,
+        "grounding_score": 1.0,
+        "consistency_score": 1.0,
+        "document_quality_score": 1.0
+      },
+      "flags": []
+    },
+    "cost_summary": {
+      "subtotal": {
+        "value": 3800.0,
+        "confidence": 1.0,
+        "evidence_quote": "SUBTOTAL: $3,800.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "overhead_and_profit": {
+        "value": 380.0,
+        "confidence": 1.0,
+        "evidence_quote": "OVERHEAD AND PROFIT: $380.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "tax_amount": {
+        "value": 0.0,
+        "confidence": 1.0,
+        "evidence_quote": "SALES TAX: $0.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "total_change_order_amount": {
+        "value": 4580.0,
+        "confidence": 0.45,
+        "evidence_quote": "TOTAL CHANGE ORDER AMOUNT: $4,580.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 0.3,
+          "grounding_score": 1.0,
+          "consistency_score": 0.35,
+          "document_quality_score": 1.0
+        },
+        "flags": [
+          "MATH_TOTAL_MISMATCH"
+        ]
+      }
+    },
+    "contract_reconciliation": {
+      "original_contract_sum": {
+        "value": 80000.0,
+        "confidence": 1.0,
+        "evidence_quote": "ORIGINAL CONTRACT SUM: $80,000.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "net_change_by_previous_change_orders": {
+        "value": 0.0,
+        "confidence": 1.0,
+        "evidence_quote": "NET CHANGE BY PREVIOUS CHANGE ORDERS: $0.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "contract_sum_prior_to_this_change_order": {
+        "value": 80000.0,
+        "confidence": 1.0,
+        "evidence_quote": "CONTRACT SUM PRIOR TO THIS CHANGE ORDER: $80,000.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "this_change_order_amount": {
+        "value": 4580.0,
+        "confidence": 1.0,
+        "evidence_quote": "THIS CHANGE ORDER AMOUNT: $4,580.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      },
+      "new_contract_sum_including_this_change_order": {
+        "value": 84580.0,
+        "confidence": 1.0,
+        "evidence_quote": "NEW CONTRACT SUM INCLUDING THIS CHANGE ORDER: $84,580.00",
+        "source_page": 1,
+        "signals": {
+          "llm_self_confidence": 1.0,
+          "grounding_score": 1.0,
+          "consistency_score": 1.0,
+          "document_quality_score": 1.0
+        },
+        "flags": []
+      }
+    },
+    "line_items": [
+      {
+        "item_number": {
+          "value": "01",
+          "confidence": 1.0,
+          "evidence_quote": "01 | Framing Labor | LABOR | 40 | HR | $85.00 | $3,800.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "description": {
+          "value": "Framing Labor",
+          "confidence": 1.0,
+          "evidence_quote": "01 | Framing Labor | LABOR | 40 | HR | $85.00 | $3,800.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "category": {
+          "value": "LABOR",
+          "confidence": 1.0,
+          "evidence_quote": "01 | Framing Labor | LABOR | 40 | HR | $85.00 | $3,800.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "quantity": {
+          "value": 40.0,
+          "confidence": 1.0,
+          "evidence_quote": "01 | Framing Labor | LABOR | 40 | HR | $85.00 | $3,800.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "unit": {
+          "value": "HR",
+          "confidence": 1.0,
+          "evidence_quote": "01 | Framing Labor | LABOR | 40 | HR | $85.00 | $3,800.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "unit_price": {
+          "value": 85.0,
+          "confidence": 1.0,
+          "evidence_quote": "01 | Framing Labor | LABOR | 40 | HR | $85.00 | $3,800.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 1.0,
+            "grounding_score": 1.0,
+            "consistency_score": 1.0,
+            "document_quality_score": 1.0
+          },
+          "flags": []
+        },
+        "total_amount": {
+          "value": 3800.0,
+          "confidence": 0.45,
+          "evidence_quote": "01 | Framing Labor | LABOR | 40 | HR | $85.00 | $3,800.00",
+          "source_page": 1,
+          "signals": {
+            "llm_self_confidence": 0.35,
+            "grounding_score": 1.0,
+            "consistency_score": 0.35,
+            "document_quality_score": 1.0
+          },
+          "flags": [
+            "MATH_LINE_ITEM_MISMATCH"
+          ]
+        },
+        "row_confidence": 0.9214
+      }
+    ]
+  }
+}
