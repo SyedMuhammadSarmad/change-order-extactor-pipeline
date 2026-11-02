@@ -15,7 +15,7 @@ PDF / Text Input
 [1. Ingestor (ingestor.py)]
   ├── Extracts text layers + renders 200 DPI page PNGs via PyMuPDF (fitz)
   ├── Detects image-only scanned PDFs and routes them to multimodal vision (0.90 quality score)
-  └── Estimates OCR noise ratio & document_quality_score (detecting $O/0, I/1, [illegible])
+  ├── Estimates OCR noise ratio & document_quality_score (detecting OCR character glitches)
   │
   ▼
 [2. Structured Extractor (llm_extractor.py)]
@@ -45,12 +45,12 @@ PDF / Text Input
 
 Every extracted attribute is wrapped in `ScoredField[T]`, containing `value`, `confidence`, `evidence_quote`, `source_page`, `signals`, and `flags`. Final confidence is computed as:
 
-$$\text{Confidence} = 0.30 \cdot S_{\text{llm}} + 0.30 \cdot S_{\text{grounding}} + 0.25 \cdot S_{\text{consistency}} + 0.15 \cdot S_{\text{doc\_quality}}$$
+$$\text{Confidence} = 0.30 \cdot S_{\text{llm}} + 0.30 \cdot S_{\text{grounding}} + 0.25 \cdot S_{\text{consistency}} + 0.15 \cdot S_{\text{doc}}$$
 
 - **$S_{\text{llm}}$ (30%)**: Raw extractor confidence, penalized when OCR character substitutions (`O`/`0`, `I`/`1`) are detected.
 - **$S_{\text{grounding}}$ (30%)**: Verifies whether the `evidence_quote` and normalized value appear in the document text (`1.0` exact quote match, `0.90` normalized value match, `0.92` multimodal vision match on scanned image-only PDFs, `0.85` implicit zero not stated, `0.45` weak grounding).
 - **$S_{\text{consistency}}$ (25%)**: Starts at `1.0`; drops to `0.30` if any `MATH_*` anomaly flag is attached by the accounting validator, or `0.55` if an `OCR_*` glitch flag is present.
-- **$S_{\text{doc\_quality}}$ (15%)**: Document scan quality score derived from OCR noise density or image resolution.
+- **$S_{\text{doc}}$ (15%)**: Document scan quality score derived from OCR noise density or image resolution.
 - **Hard Caps**: Any field with a `MATH_*` mismatch flag is hard-capped at `<= 0.40` confidence, and any field with an `OCR_*` substitution flag is capped at `<= 0.65`. If any critical accounting check fails, `overall_confidence` is capped at `<= 0.55`, ensuring arithmetic discrepancies always trigger human review.
 
 ---
